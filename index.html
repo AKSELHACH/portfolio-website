@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AkselTech Ecofriendly - Innovative Tech Solutions for a Greener Future">
+    <title>AkselTech Ecofriendly</title>
+    <link rel="stylesheet" href="dynamic.css"> <!-- Link to external CSS -->
+    <style>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #93ff33; /* Light green background */
+            color: #33b2ff; /* Light blue text color */
+        }
+
+        header {
+            background-color: #2a7f4f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1d5938;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #14522b;
+            border-radius: 5px;
+        }
+
+        .hero {
+            background-image: url('beautifulnature.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        .hero .cta {
+            background-color: #2a7f4f;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .service {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #2a7f4f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+<script>
+        async function sendMessage(message) {
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer YOUR_API_KEY`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    model: "gpt-3.5-turbo",
+                    messages: [{role: "user", content: message}]
+                }),
+            });
+            const data = await response.json();
+            return data.choices[0].message.content;
+        }
+
+        function createChatbotInterface() {
+            const chatContainer = document.createElement('div');
+            chatContainer.style.position = 'fixed';
+            chatContainer.style.bottom = '10px';
+            chatContainer.style.right = '10px';
+            chatContainer.style.width = '300px';
+            chatContainer.style.height = '400px';
+            chatContainer.style.border = '1px solid #ccc';
+            chatContainer.style.backgroundColor = 'white';
+            chatContainer.style.overflow = 'auto';
+
+            const input = document.createElement('input');
+            input.placeholder = 'Type a message...';
+            chatContainer.appendChild(input);
+
+            const button = document.createElement('button');
+            button.innerText = 'Send';
+            button.onclick = async () => {
+                const userMessage = input.value;
+                chatContainer.innerHTML += `<div>User: ${userMessage}</div>`;
+                const botResponse = await sendMessage(userMessage);
+                chatContainer.innerHTML += `<div>Bot: ${botResponse}</div>`;
+                input.value = '';
+            };
+
+            chatContainer.appendChild(button);
+            document.body.appendChild(chatContainer);
+        }
+
+        window.onload = createChatbotInterface;
+    </script>
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>AkselTech Ecofriendly</h1>
+        <p>Innovative Tech Solutions for a Greener Future</p>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="#boutique">Boutique</a> <!-- Added Boutique link -->
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Welcome to AkselTech Ecofriendly</h1>
+        <p>Your partner in sustainable technology solutions</p>
+        <a href="#services" class="cta">Our Services</a>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="content">
+        <h2>About Us</h2>
+        <p>We are committed to delivering innovative, eco-friendly technology solutions that help businesses and individuals reduce their environmental impact.</p>
+    </section>
+
+    <!-- Services Section -->
+<section id="services" class="content">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service">
+            <h3>Green IT Consulting</h3>
+            <p>Helping businesses adopt eco-friendly technology practices.</p>
+            <greenITconsulting.jpg" alt="Green IT Consulting">
+        </div>
+        <div class="service">
+            <h3>Renewable Energy Solutions</h3>
+            <p>Providing sustainable energy alternatives for your tech needs.</p>
+            <Renwableenergysolutions.jpg" alt="Renewable Energy Solutions">
+        </div>
+        <div class="service">
+            <h3>Eco-friendly Software Development</h3>
+            <p>Developing software that minimizes environmental impact.</p>
+            <Ecofriendlysoftware.jpg" alt="Eco-friendly Software Development">
+        </div>
+        <div class="service">
+            <h3>Energy Audits</h3>
+            <p>Assessing your energy consumption to identify savings and efficiency opportunities.</p>
+            <Energyaudits.jpg" alt="Energy Audits">
+        </div>
+        <div class="service">
+            <h3>Carbon Footprint Analysis</h3>
+            <p>Evaluating your business’s carbon footprint and providing strategies to reduce it.</p>
+            <Carbon Footprint Analysis.png" alt="Carbon Footprint Analysis">
+        </div>
+        <div class="service">
+            <h3>Green Cloud Solutions</h3>
+            <p>Implementing eco-friendly cloud services to optimize resources and reduce waste.</p>
+            <Green Cloud Solutions.jpg" alt="Green Cloud Solutions">
+        </div>
+        <div class="service">
+            <h3>Sustainable IT Procurement</h3>
+            <p>Advising on the purchase of environmentally friendly hardware and technology solutions.</p>
+            <Sustainable IT Procurement.jpg" alt="Sustainable IT Procurement">
+        </div>
+        <div class="service">
+            <h3>Employee Training Programs</h3>
+            <p>Educating your team on sustainable practices and green technology.</p>
+            <EmployeeTrainingPrograms.jpg" alt="Employee Training Programs">
+        </div>
+    </div>
+</section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="content">
+        <h2>Our Projects</h2>
+        <p>We have worked on numerous projects that focus on sustainability and technology integration.</p>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="content">
+        <h2>Latest Blog Posts</h2>
+        <p>Stay updated with the latest in eco-friendly tech solutions.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content">
+        <h2>Contact Us</h2>
+        <p>Have questions? Reach out to us today!</p>
+        <p>Email: <a href="mailto:info@akseltech.com">info@akseltech.com</a></p>
+        <p>Phone: 587-707-5649</p>
+    </section>
+<!-- Boutique Section -->
+<section id="boutique" class="content">
+    <h2>Eco-Friendly Boutique</h2>
+    <p>Explore our selection of green products that are good for you and the planet.</p>
+    
+    <!-- Tabs Navigation -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'products')">Products</button>
+        <button class="tab-button" onclick="openTab(event, 'about')">About Us</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="products" class="tab-content active">
+        <div class="products">
+            <div class="product">
+                <h3>Reusable Water Bottle</h3>
+                <p>Stay hydrated with our eco-friendly reusable water bottle made from stainless steel. It's designed to keep your drinks cold for 24 hours and hot for 12 hours.</p>
+                <p>Price: <strong>$25.00</strong></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>Organic Cotton Tote Bag</h3>
+                <p>Shop sustainably with our durable and stylish organic cotton tote bag. Perfect for grocery shopping or carrying your essentials while reducing plastic use.</p>
+                <p>Price: <strong>$15.00</strong></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>Bamboo Toothbrush</h3>
+                <p>Make a difference with our biodegradable bamboo toothbrush. With soft bristles, it's gentle on your gums while being kind to the planet.</p>
+                <p>Price: <strong>$5.00</strong></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>LSTN Audio Products</h3>
+                <p>LSTN offers a range of headphones and speakers made from sustainable materials, such as real zebra wood. Their products not only deliver quality sound but also support social good by providing hearing aids to those in need.</p>
+                <p>Price: <strong>Varies</strong></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>AGood Company Tech Accessories</h3>
+                <p>This brand provides compostable phone cases and screen protectors made from flax and hemp. Their products are designed to minimize environmental impact while offering protection for your devices.</p>
+                <p>Price: <strong>Varies</strong></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>Renewed Electronics</h3>
+                <p>Amazon Renewed features a variety of refurbished electronic products, including smartphones, laptops, and TVs. These items are inspected and tested to ensure quality, providing an eco-friendly option by extending the lifecycle of devices.</p>
+                <p>Price: <strong>Varies</strong></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>Fairphone</h3>
+                <p>Known for its commitment to sustainability, Fairphone manufactures smartphones using ethically sourced materials and promotes a transparent supply chain. While primarily available in Europe, this brand is paving the way for more sustainable electronics.</p>
+                <p>Price: <strong>Varies</strong></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>Eco-Friendly Charging Solutions</h3>
+                <p>Look for solar chargers and energy-efficient power banks that help reduce reliance on traditional power sources while being portable and convenient for outdoor use.</p>
+                <p>Price: <strong>Varies</strong></p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+   
+        <div id="about" class="tab-content">
+            <h3>About Our Boutique</h3>
+            <p>Our eco-friendly boutique offers a selection of sustainable products that promote a green lifestyle. Every purchase supports our mission to create a more sustainable world.</p>
+        </div>
+    </body>
+</html>

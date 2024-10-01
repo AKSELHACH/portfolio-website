@@ -1,0 +1,183 @@
+/* Basic styles */ 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('beautifulnature.jpg'); /* Set the background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    color: #33b2ff; /* Light blue text color */
+    height: 100vh; /* Make sure the body takes full height */
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+header {
+    background-color: rgba(42, 127, 79, 0.8); /* Semi-transparent background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    transform: translateZ(20px); /* Slight elevation effect */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(29, 89, 56, 0.8); /* Semi-transparent background */
+    padding: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Increased shadow for depth */
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+}
+
+nav a:hover {
+    background-color: #90EE90;
+    border-radius: 5px;
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    color: DarkBlue;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent overlay */
+    transform: translateZ(10px); /* Elevate the hero section */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+.hero .cta {
+    background-color: #ADD8E6;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease; /* Add scale effect on hover */
+}
+
+.hero .cta:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px; /* Rounded corners */
+    width: 300px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Increased shadow */
+    transform: translateZ(10px); /* Elevate service boxes */
+    transition: transform 0.3s; /* Add transition for hover effect */
+}
+
+.service:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.service h3 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: rgba(42, 127, 79, 0.8); /* Semi-transparent */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transform: translateZ(20px); /* Elevate footer */
+}
+
+/* Boutique Section */
+.boutique {
+    padding: 40px 20px; /* Add padding for the boutique section */
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+}
+
+.boutique h2 {
+    color: DarkBlue; /* Title color for boutique */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Text shadow for boutique titles */
+}
+
+.products {
+    display: flex;
+    justify-content: center; /* Center align products */
+    flex-wrap: wrap;
+    gap: 20px; /* Add space between product cards */
+}
+
+.product {
+    background-color: #f9f9f9; /* Light background for product cards */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px; /* Rounded corners */
+    width: 250px; /* Fixed width for product cards */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Increased shadow */
+    text-align: center;
+    transition: transform 0.3s; /* Smooth transform effect */
+}
+
+.product:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.product h3 {
+    margin-top: 0;
+    font-size: 24px; /* Larger font for product title */
+}
+
+.product p {
+    margin: 10px 0;
+    font-size: 16px; /* Font size for product description */
+}
+
+.product .price {
+    font-size: 18px; /* Price styling */
+    color: #4CAF50; /* Green color for prices */
+    margin: 10px 0;
+}
+
+.product .cta {
+    background-color: #90EE90; /* Use the same green color as the button */
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Add transform effect */
+}
+
+.product .cta:hover {
+    background-color: #2a7f4f; /* Darker green on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
