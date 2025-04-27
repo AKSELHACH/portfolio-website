@@ -182,8 +182,8 @@ footer {
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
 video {
-    width: 800px; /* or whatever size you prefer */
-    max-width: 100%; /* So it stays responsive */
+    width: 1000px; /* or whatever size you prefer */
+    max-width: 150%; /* So it stays responsive */
     height: auto; /* Maintain aspect ratio */
     display: block;
     margin: 20px auto; /* Center the video */
