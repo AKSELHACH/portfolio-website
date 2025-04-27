@@ -181,3 +181,12 @@ footer {
     background-color: #2a7f4f; /* Darker green on hover */
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
+video {
+    width: 800px; /* or whatever size you prefer */
+    max-width: 100%; /* So it stays responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 20px auto; /* Center the video */
+    border-radius: 10px; /* Optional: make corners rounded */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Optional: add shadow for depth */
+}
